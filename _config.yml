@@ -11,7 +11,7 @@ locale                   : "en-US"
 site_theme               : "default"
 title                    : "Alex's Homepage"
 title_separator          : "-"
-name                     : &name "James Alexandr Carr (Alex)"
+name                     : &name "Alex"
 description              : &description "personal description"
 url                      : https://AlexandrCarr.github.io 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -23,9 +23,9 @@ repository               : "AlexandrCarr/AlexandrCarr.github.io"
 author:
   # Biographic information
   avatar           : "Profile.heic"
-  name             : "James Alexandr Carr (Alex)"
+  name             : "Alex Carr"
   pronouns         : # example: "she/her"  
-  bio              : "Graduate student @ MIT (Quant Finance)"
+  bio              : "MIT '26"
   location         : "Cambridge, MA"
   employer         : "Massachusetts Institute of Technology"
   uri              : # URL
