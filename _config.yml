@@ -22,12 +22,12 @@ repository               : "AlexandrCarr/AlexandrCarr.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "Profile.heic"
+  avatar           : "ProfilePic.png"
   name             : "Alex Carr"
   pronouns         : # example: "she/her"  
   bio              : "MIT '26"
   location         : "Cambridge, MA"
-  employer         : "Massachusetts Institute of Technology"
+  employer         : "MIT"
   uri              : # URL
   email            : "alex022@mit.edu" 
 
