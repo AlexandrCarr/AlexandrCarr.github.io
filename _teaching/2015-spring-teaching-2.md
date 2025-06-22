@@ -1,20 +1,16 @@
 ---
-title: "Teaching experience 2"
+title: "Tutoring"
 collection: teaching
-type: "Workshop"
-permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
-date: 2015-01-01
-location: "City, Country"
+type: "Teaching"
+permalink: /teaching/tutoring
+venue: "Several top 20 colleges"
+date: 2020 to 2024
+location: "Online"
 ---
+To pay for college, I started a tutoring business. As part of the business, I have actively supported students several students at top 20 colleges. Beyond the partial list below, I have also tutored 25+ courses in business & management, finance & accounting, history, law, literature, mathematics, philosophy, political science, and psychology.
 
-This is a description of a teaching experience. You can use markdown like any other post.
+LSE: Y1 economics sequence, Y1 stats sequence, economic history of post-WWII Britian, first to third year management/accounting/finance/economics courses.
 
-Heading 1
-======
+UCL: Y1 linear algebra, Y1 calculus, full Y2 and Y3 geography, Y3 political science 
 
-Heading 2
-======
 
-Heading 3
-======
