@@ -1,11 +1,11 @@
 ---
 title: "Financial Mathematics"
 collection: teaching
-type: "Graduate course"
+type: "TA"
 permalink: /teaching/MIT
 venue: "Massachusetts Institute of Technology"
 date: 07-01-2025
 location: "Cambridge, MA"
 ---
 
-A graduate bootcamp course focussed on mathematical statistics, probability, financial econometrics, and calculus (stochastic calculus, ODEs, and PDEs)
+A graduate bootcamp course focussed on mathematical statistics, probability, financial econometrics, linear algebra and a little calculus (stochastic calculus, ODEs, and PDEs)
