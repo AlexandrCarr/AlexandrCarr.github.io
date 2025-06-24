@@ -15,35 +15,31 @@ If you want to see a sample of my data cleaning and formatting, please look at t
 
 The big picture is that, each month, the model assigns every stock a score $$\hat M$$. The trade rule is to long the top 20 % of scores, short the bottom 20 % in equal dollars. Everything that follows exists only to make that ranking as economically‑sensible and forecast‑accurate as possible.
 
-- I snapshot each company’s 35 indicators on each calendar date, exactly
-as they were published—no peeking ahead or filling missing data.
+- I snapshot each company’s 35 indicators on each calendar date, exactly as they were published—no peeking ahead or filling missing data.
 
-- Inspired by Fama-Frecnch, every fundamental value is shifted forward by
-three months so the model only sees information that would have been in
-investors’ hands at the time.
+- Inspired by Fama-Frecnch, every fundamental value is shifted forward by three months so the model only sees information that would have been in investors’ hands at the time.
 
 - Standardise each variable across all stocks on the same date, removing level effects and inflation drift.
 
-- For each ticker I stack the last four quarterly rows into a 4 × 35 “movie
-strip.” Batching these gives a tensor $$X \in\mathbb{R}^{B×4×35}$$ that shows one year of dynamics per example.
+- For each ticker I stack the last four quarterly rows into a 4 × 35 “movie strip.” Batching these gives a tensor $$X \in\mathbb{R}^{B×4×35}$$ that shows one year of dynamics per example.
 
-- A single 1-D convolution (kernel size 3, channels $$35\to128$$) slides over the four quarters and picks up simple patterns—“margin ↑↑,” “debt spike,” “EPS turn.”  Output is $B\times4\times128$.
+- A single 1-D convolution (kernel size 3, channels $$35\to128$$) slides over the four quarters and picks up simple patterns—“margin ↑↑,” “debt spike,” “EPS turn.”  Output is $$B\times4\times128$$.
 
 - Each of the four quarter-vectors can now attend to the other three (dimension 128, 8 heads).  The model learns sequences like “cap-ex cut → margin rise → sales beat.” This is a two-layer Transformer encoder.
 
-- I keep token 4 (the current quarter), which now carries information from all four time steps: a $128$-dim vector summarising the past year.
+- I keep token 4 (the current quarter), which now carries information from all four time steps: a 128-dim vector summarising the past year.
 
 - That $128$-vector attends to a small set of learnable reference points pooled across the batch.  It’s as if each company asks “How do I stack up against my peers today?” and adjusts its embedding accordingly. This is a peer-aware set-attention block, which also helped compensate for the fact that I initially did not have information on a stock's industry and sector.
 
-- A re‑orthogonalised linear map $W\in\mathbb R^{128\times15}$ forces the output factors to be mutually independent; the model is now working in a 15‑factor latent space. 
+- A re‑orthogonalised linear map $$W\in\mathbb R^{128\times15}$$ forces the output factors to be mutually independent; the model is now working in a 15‑factor latent space. 
 
-- Map those 15 factors to a scalar score $\hat M=w^\top f$. Loss 1: Soft‑Spearman IC aligns the rank of $\hat M$ with next‑month returns. Loss 2: Sharpe penalty discourages factor explosions
+- Map those 15 factors to a scalar score $$\hat M=w^\top f$$. Loss 1: Soft‑Spearman IC aligns the rank of $$\hat M$$ with next‑month returns. Loss 2: Sharpe penalty discourages factor explosions
 
 - A second linear map rebuilds the original 35 inputs; an L1 factor (weight = 0.05) keeps learned factors anchored in economic reality and reduces over‑fitting.
 
-- Finally, I add a "regularisation cocktail". I use 0.2 dropout on activation, 0.1 mixout on weights (i.e. randomly freeze some weights each pass), and then $10^{-4}$ weight decay in AdamW.
+- Finally, I add a "regularisation cocktail". I use 0.2 dropout on activation, 0.1 mixout on weights (i.e. randomly freeze some weights each pass), and then $$10^{-4}$$ weight decay in AdamW.
 
-- In terms of optimization, I use AdamW as the base optimizer, Cosine warm restrats (10‑epoch cycle, $\eta_{\min}=10^{-6}$), and stochastic weight averaging for the last 25% of epochs.
+- In terms of optimization, I use AdamW as the base optimizer, Cosine warm restrats (10‑epoch cycle, $$\eta_{\min}=10^{-6}$$), and stochastic weight averaging for the last 25% of epochs.
 
 The result is a clean, orthogonal 15‑factor model whose sole downstream use is to rank stocks so we can long the best 20 %, short the worst 20 %.
 
