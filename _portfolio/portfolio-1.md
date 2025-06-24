@@ -69,6 +69,8 @@ There are many other cases like this. To address this, Ledoit develops linear an
 
 **5) Results**
 
+The "previous meeting" model was far less constrained, as alluded to in step 3. I also did a lot less regularization and did not use the Sharpe penalty.
+
 <img src="/images/Performance.png" alt="Performance1" style="width:60%;"/>
 
 <img src="/images/Performance2.png" alt="Performance2" style="width:60%;"/>
