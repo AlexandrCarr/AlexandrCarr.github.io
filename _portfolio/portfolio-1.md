@@ -69,7 +69,7 @@ There are many other cases like this. To address this, Ledoit develops linear an
 
 **5) Results**
 
-The "previous meeting" model was far less constrained, as alluded to in step 3. I also did a lot less regularization and did not use the Sharpe penalty.
+In table 1, the "previous meeting" model was far less constrained, as alluded to in step 3. I also did a lot less regularization and did not use the Sharpe penalty. In figure 2, the orange line is the optimal portfolio that is achieved by inverse variance portfolio construction. 
 
 <img src="/images/Performance.png" alt="Performance1" style="width:60%;"/>
 
