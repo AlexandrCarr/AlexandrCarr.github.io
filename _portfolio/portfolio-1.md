@@ -66,3 +66,11 @@ Upon reading several papers from Ledoit, I realized that my optimization in step
 For instance, let's say that we are facing a massive market drawdown. Through various mechanisms, be it Brunnermeier and Sannikov's (2014) fire sales or Geanakoplos' (2010) leverage cycles, the main factor driving individual stock returns becomes the exposure to the market. In this situation, if we undergo an eigen-decomposition of the variance-covariance matrix, we will find that the matrix of eigenvalues is zero or almost zero for all factors but market exposure. More mathematically, the spectral distribution of eigenvalues will be extremely concentrated at zero. This would plausibly mean that we cannot invert the eigenvalue matrix, and therefore cannot invert the entire variance-covariance matrix. This is very problematic because a lot of step 3 requires invertibility. 
 
 There are many other cases like this. To address this, Ledoit develops linear and non-linear shrinkage methods. I imposed linear shrinkage methods to ensure that step 3 does not break down and I don't go out of business.
+
+**5) Results**
+
+/images/Performance.png
+
+/images/Performance2.png
+
+
