@@ -25,7 +25,7 @@ investors’ hands at the time.
 - On each date, I standardize all variables across all stocks.
 
 - For each ticker I stack the last four quarterly rows into a 4 × 35 “movie
-strip.” Batching these gives a tensor X $\in$ ∈ R^{B×4×35} that shows one year
+strip.” Batching these gives a tensor X $\in$ $\mathbb{R}^{B×4×35}$ that shows one year
 of dynamics per example.
 
 -
