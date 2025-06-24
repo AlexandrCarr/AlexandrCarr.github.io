@@ -69,8 +69,9 @@ There are many other cases like this. To address this, Ledoit develops linear an
 
 **5) Results**
 
-/images/Performance.png
+<img src="/images/Performance.png" alt="Performance1" style="width:60%;"/>
 
-/images/Performance2.png
+<img src="/images/Performance2.png" alt="Performance2" style="width:60%;"/>
+
 
 
