@@ -51,15 +51,15 @@ The result is a clean, orthogonal 15‑factor model whose sole downstream use is
 
 Deriving from Professor Matthew Rothman's excellent class at MIT and independent reading, I imposed the following constraints on my model.
 
-First, the model was factor neutral with respect to the 15 latent factors. 
+- Factor neutral with respect to the 15 latent factors. 
 
-Second, the model allocated at most 2% of the portfolio value to any given stock and limited gross leverage to 2x.
+- Allocated at most 2% of the portfolio value to any given stock and limited gross leverage to 2x.
 
-Third, the model's max volatility was 12% and its maximum drawdown was set to 5%.
+- Max volatility was 12% and its maximum drawdown was set to 5%.
 
-Fourth, the model was L/S dollar neutral. 
+- L/S dollar neutral. 
 
-Finally, I included 10 bps of TCosts.  
+- 10 bps of TCosts.  
 
 I found the process of portfolio optimization the most exciting and eye-opening part of the project! Firstly, it was fascinating how relatively small changes in gross leverage or the maximum weight per stock would result in very unexpected results. For instance, shifting my gross leverage from 2x to 2.5x reduced the Sharpe Ratio by approximately 0.15, increasing it from 2.5x to 2.75x brought my Sharpe to below 0.5, and I even had negative annualized returns for gross leverage exceeding 4.5. Secondly, almost certainly romanticizing the process, it felt good imposing responsibile behaviour on a model that is far smarter, faster, and more powerful than I can ever be. Although the model yielded a slightly lower Sharpe when I began constraining volatility (fell from 1.52 to 1.31), I never blew up and was a more reliable money-maker. I was just quite enthralled by the process of designing a system that reproducibly yielded an attractive return at an acceptable level of risk (i.e. 5% max drawdown and 12% vol with 2x gross leverage).
 
