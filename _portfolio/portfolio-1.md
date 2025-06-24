@@ -13,7 +13,7 @@ If you want to see a sample of my data cleaning and formatting, please look at t
 
 **2) Model Design.**
 
-The big picture is that, each month, the model assigns every stock a score $\hat M$. The trade rule is to long the top 20 % of scores, short the bottom 20 % in equal dollars. Everything that follows exists only to make that ranking as economically‑sensible and forecast‑accurate as possible.
+The big picture is that, each month, the model assigns every stock a score $$\hat M$$. The trade rule is to long the top 20 % of scores, short the bottom 20 % in equal dollars. Everything that follows exists only to make that ranking as economically‑sensible and forecast‑accurate as possible.
 
 - I snapshot each company’s 35 indicators on each calendar date, exactly
 as they were published—no peeking ahead or filling missing data.
@@ -25,9 +25,9 @@ investors’ hands at the time.
 - Standardise each variable across all stocks on the same date, removing level effects and inflation drift.
 
 - For each ticker I stack the last four quarterly rows into a 4 × 35 “movie
-strip.” Batching these gives a tensor X $\in$ $\mathbb{R}^{B×4×35}$ that shows one year of dynamics per example.
+strip.” Batching these gives a tensor $$X \in\mathbb{R}^{B×4×35}$$ that shows one year of dynamics per example.
 
-- A single 1-D convolution (kernel size 3, channels $35\to128$) slides over the four quarters and picks up simple patterns—“margin ↑↑,” “debt spike,” “EPS turn.”  Output is $B\times4\times128$.
+- A single 1-D convolution (kernel size 3, channels $$35\to128$$) slides over the four quarters and picks up simple patterns—“margin ↑↑,” “debt spike,” “EPS turn.”  Output is $B\times4\times128$.
 
 - Each of the four quarter-vectors can now attend to the other three (dimension 128, 8 heads).  The model learns sequences like “cap-ex cut → margin rise → sales beat.” This is a two-layer Transformer encoder.
 
