@@ -20,8 +20,8 @@ main:
   - title: "Portfolio & Data"
     url: /portfolio/
         
-  - title: "Books"
-    url: /year-archive/
+  #- title: "Books"
+  #  url: /year-archive/
     
   - title: "CV"
     url: /files/AC_CV.pdf
@@ -29,5 +29,5 @@ main:
   # - title: "CV"
   #   url: /cv-json/
     
-  # - title: "Guide"
-  # url: /markdown/
+   - title: "Books"
+     url: /markdown/
