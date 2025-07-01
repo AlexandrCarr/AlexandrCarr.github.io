@@ -22,6 +22,9 @@ main:
         
   #- title: "Books"
   #  url: /year-archive/
+
+  - title: "Books"
+    url: /markdown/
     
   - title: "CV"
     url: /files/AC_CV.pdf
@@ -29,5 +32,4 @@ main:
   # - title: "CV"
   #   url: /cv-json/
     
-   - title: "Books"
-     url: /markdown/
+  
