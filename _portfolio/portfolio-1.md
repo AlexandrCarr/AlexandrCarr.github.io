@@ -1,6 +1,6 @@
 ---
 title: "Transformer-based L/S Strategy on the Russell 1000: 1.31 OOS Sharpe (2020 - 2024)"
-excerpt: "Covered data cleaning, model design, and portfolio construction (Python)."
+excerpt: "<br/><img src='/images/1772.jpg'>"
 collection: portfolio
 ---
 Inspired by deep learning courses at Harvard and MIT, I decided to build a transformer-based L/S strategy for the Russell 1000 (R1000) index. My in-sample period was 07/2000 (post-2000 rebalancing) to 06/2020 and my out-of-sample period was 07/2020 (post-2020 rebalancing) to 12/2024. I detail the steps I took, my results, and some reflections.
