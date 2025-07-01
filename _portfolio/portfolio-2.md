@@ -10,10 +10,10 @@ This dissertation seeks to understand how prejudice influences the labor market 
 <img src="/images/thesis1.png" alt="Thesis1" style="width:60%;"/>
 
 
-The full thesis is available here:  [📄 Download the full thesis (PDF)](/assets/Thesis.pdf)
+The full thesis is available here:  [📄 Download the full thesis (PDF)](/files/Thesis.pdf)
 
 <iframe
-  src="/assets/Thesis.pdf#view=fitH"
+  src="/files/Thesis.pdf#view=fitH"
   width="100%"
   height="700"
   style="border:1px solid #ccc; border-radius:8px;"
