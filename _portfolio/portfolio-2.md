@@ -1,6 +1,6 @@
 ---
 title: "Thesis: Generative AI Software Measuring the Labour Market Discrimination of the Roma (Top Mark in Recent History, Merchant Prize)"
-excerpt: "Short description of portfolio item number 2 <br/><img src='/images/gypsies.jpg'>"
+excerpt: "<br/><img src='/images/gypsies.jpg'>"
 collection: portfolio
 ---
 
