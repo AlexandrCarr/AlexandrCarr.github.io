@@ -7,13 +7,11 @@ Inspired by deep learning courses at Harvard and MIT, I decided to build a trans
 
 **1) Data Collection and Cleaning.**
 
-Using the Bloomberg Terminal and various WRDS datasets, I collected point-in-time data on all the components of the R1000 from June 2000 to June 2024. This included price data, 32 fundamental indicators (e.g. profitability, debt, and other theoretically accounting data), and more technical indicators (e.g. various types of momentum, like one-month or 12-month momentum). This involved laborious data cleaning, like learning how to deal with various types of outliers or missing data, and sharpened my knowledge of Pandas. 
-
-If you want to see a sample of my data cleaning and formatting, please look at the final Russell 1000 dataset in the data section of the website or scroll through Project X (this was a very long and data-cleaning-intensive pset). 
+Using the Bloomberg Terminal and various WRDS datasets, I collected point-in-time data on all the components of the R1000 from June 2000 to June 2024. This included price data, 35 fundamental indicators (e.g. profitability, debt, and other theoretically accounting data), and more technical indicators (e.g. various types of momentum, like one-month or 12-month momentum). This involved laborious data cleaning, like learning how to deal with various types of outliers or missing data, and sharpened my knowledge of Pandas. If you want to see a sample of my data cleaning and formatting, please look at the final Russell 1000 dataset in the data section of the website.
 
 **2) Model Design.**
 
-The big picture is that, each month, the model assigns every stock a score $$\hat M$$. The trade rule is to long the top 20 % of scores, short the bottom 20 % in equal dollars. Everything that follows exists only to make that ranking as economically‑sensible and forecast‑accurate as possible.
+The big picture is that, every month, the model assigns every stock a score $$\hat M$$. The trade rule is to long the top 20 % of scores, short the bottom 20 % in equal dollar amounts. Everything that follows exists only to make that ranking as economically‑sensible and forecast‑accurate as possible.
 
 - I snapshot each company’s 35 indicators on each calendar date, exactly as they were published—no peeking ahead or filling missing data.
 
@@ -63,7 +61,7 @@ I found the process of portfolio optimization the most exciting and eye-opening 
 
 Upon reading several papers from Ledoit, I realized that my optimization in step 3 would collapse when my variance-covariance matrix estimation would be poor.
 
-For instance, let's say that we are facing a massive market drawdown. Through various mechanisms, be it Brunnermeier and Sannikov's (2014) fire sales or Geanakoplos' (2010) leverage cycles, the main factor driving individual stock returns becomes the exposure to the market. In this situation, if we undergo an eigen-decomposition of the variance-covariance matrix, we will find that the matrix of eigenvalues is zero or almost zero for all factors but market exposure. More mathematically, the spectral distribution of eigenvalues will be extremely concentrated at zero. This would plausibly mean that we cannot invert the eigenvalue matrix, and therefore cannot invert the entire variance-covariance matrix. This is very problematic because a lot of step 3 requires invertibility. 
+For instance, let's say that we are facing a massive market drawdown. Through various mechanisms, be it Brunnermeier and Sannikov's (2014) fire sales or Geanakoplos' (2010) leverage cycles, the main factor driving individual stock returns becomes the exposure to the market. In this situation, if we undergo an eigen-decomposition of the variance-covariance matrix, we will find that the matrix of eigenvalues is zero or almost zero for all factors but market exposure. More mathematically, the spectral distribution of eigenvalues will be extremely concentrated at zero. This would plausibly mean that we cannot invert the eigenvalue matrix, and therefore cannot invert the entire variance-covariance matrix. This is very problematic because a lot of step 3 requires invertibility, so my model would implode.
 
 There are many other cases like this. To address this, Ledoit develops linear and non-linear shrinkage methods. I imposed linear shrinkage methods to ensure that step 3 does not break down and I don't go out of business.
 
