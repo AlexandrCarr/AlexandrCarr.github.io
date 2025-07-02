@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi there! I am Alex, a graduate student at MIT, pursuing coursework and research in finance, computer science, and statistics. 
+Hi there! I am Alex, a graduate student at MIT, pursuing coursework and research in finance, computer science, and statistics. I am also cross-registered at Harvard, taking graduate courses in machine learning. 
 
 I completed my undergraduate degree at the University of Edinburgh in 2024, ranking top of my cohort in Economics with Applied Mathematics, and was going to pursue a PhD in Economics at Oxford. Although intelectually exciting, I found academic research to be a bit too slow and wanted to work on applied and computationally complex problems, leading me to MIT's Master of Finance. Through internships and personal projects, I found quantitative finance to be fast-paced, meritocratic, intellectually stimulating, and one of the few careers that allowed me to read papers in my spare time. This page primarily serves as a repository of my projects and research, hoping to showcase my excitement for the field. 
 
