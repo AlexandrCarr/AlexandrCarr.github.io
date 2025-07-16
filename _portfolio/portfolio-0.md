@@ -10,12 +10,6 @@ The dataset provides 45 fundamental and technical indicators for the members of 
 
 I hope you have fun exploring the data!!!
 
-
-<!-- Link for anyone whose browser won’t show the inline viewer -->
-[📄 Data](/files/r1000_monthly_pti.parquet)
-
-<!-- Link for anyone whose browser won’t show the inline viewer -->
-[📄 Description of Variables](/files/Variables.pdf)
-
+Link: https://www.dropbox.com/scl/fo/l4hmgsv8kfovh04n85r22/AEQyeBvWtYZyOucmVMGpiJE?rlkey=8gv67fi4xuk1q1fcvnb2kfgpj&st=s2m22sny&dl=0
 
 
